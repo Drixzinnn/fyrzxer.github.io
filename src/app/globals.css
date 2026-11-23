@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Paleta fyrzxer. Canais RGB para funcionar com opacidade do Tailwind. */
+:root {
+  --canvas: 243 244 248;   /* papel frio */
+  --surface: 255 255 255;
+  --raised: 236 238 246;
+  --ink: 27 29 42;         /* tinta índigo */
+  --muted: 108 112 135;
+  --line: 223 226 238;
+  --brand: 91 61 245;      /* violeta elétrico */
+  --brand-ink: 255 255 255;
+  --flare: 255 90 54;      /* brasa: só curtidas e alertas */
+  color-scheme: light;
+}
+
+.dark {
+  --canvas: 14 15 30;
+  --surface: 22 24 46;
+  --raised: 33 36 64;
+  --ink: 238 239 250;
+  --muted: 150 154 181;
+  --line: 45 48 82;
+  --brand: 140 118 255;
+  --brand-ink: 14 15 30;
+  --flare: 255 112 80;
+  color-scheme: dark;
+}
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+    min-height: 100dvh;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--brand));
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+}
+
+@layer utilities {
+  /* Respeita a área segura de celulares com notch/barra de gestos. */
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

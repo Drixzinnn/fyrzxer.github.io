@@ -1,0 +1,16 @@
+{
+  "name": "fyrzxer",
+  "short_name": "fyrzxer",
+  "description": "Fotos, vídeos e histórias de quem você acompanha.",
+  "start_url": "/feed",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F3F4F8",
+  "theme_color": "#5B3DF5",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
